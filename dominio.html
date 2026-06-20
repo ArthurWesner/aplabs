@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>Planeta | AP Labs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dominio.css">
+</head>
+
+<body class="status-default"><canvas id="stars-canvas"></canvas>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><img src="logo.png" alt="AP Labs"><span class="logo-labs">LABS</span></div>
+            <div class="nav-links"><a href="index.html">PÁGINA INICIAL</a><a href="https://wa.me/SEUNUMERO"
+                    class="btn-glow">Falar com Consultor</a></div>
+        </nav>
+    </header>
+    <main class="space-container">
+        <div class="planet">
+            <div class="planet-glow"></div>
+        </div>
+        <div class="search-wrapper">
+            <div class="input-container"><input id="domain-input" placeholder="DIGITE O SEU DOMÍNIO" autocomplete="off"
+                    spellcheck="false"><button id="search-btn" aria-label="Consultar domínio"><svg width="24"
+                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.35-4.35" />
+                    </svg></button></div>
+            <div id="result-message" class="result-message"></div>
+        </div>
+        <div class="horizon">
+            <div class="horizon-glow"></div>
+        </div>
+    </main>
+    <script src="dominio.js"></script>
+</body>
+
+</html>
