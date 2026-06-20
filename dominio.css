@@ -1,8 +1,17 @@
 html, body {
-  overflow-x: hidden !important; /* Impede que a tela arraste para os lados */
+  /* 1. FALLBACKS DE SEGURANÇA PARA O IPHONE */
+  background-color: #08020f !important; /* Força o fundo escuro mesmo que o gradiente falhe */
+  color: #ffffff; /* Força o texto a ficar branco */
+  
+  /* 2. TRAVAS DE LAYOUT (que fizemos antes) */
+  overflow-x: hidden !important; 
   width: 100%;
   max-width: 100vw;
+  min-height: 100vh;
   position: relative;
+  
+  /* 3. AQUI VAI O SEU BACKGROUND COMPLEXO (Mantenha o que você já tinha) */
+  /* background: radial-gradient(...) etc */
 }
 
 @property --hlx {
@@ -106,17 +115,6 @@ body.status-error {
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
-}
-
-html,
-body {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
 }
 
 body {
