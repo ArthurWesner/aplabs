@@ -500,7 +500,22 @@ body {
   }
 }
 
+
+@keyframes spin-f-mobile {
+  0% { transform: translateX(-50%) rotate(0deg) scale(1); }
+  52% { transform: translateX(-50%) rotate(250deg) scale(1.01); }
+  100% { transform: translateX(-50%) rotate(360deg) scale(1); }
+}
+
+@keyframes spin-b-mobile {
+  0% { transform: translateX(-50%) rotate(0deg) scale(1); }
+  52% { transform: translateX(-50%) rotate(-250deg) scale(1.01); }
+  100% { transform: translateX(-50%) rotate(-360deg) scale(1); }
+}
+
+
 @media (max-width: 600px) {
+  
   .navbar {
     padding: 1.5rem 6%;
     gap: 0;
