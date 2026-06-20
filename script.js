@@ -177,11 +177,13 @@ function initDigitalGlobe() {
   const satRadius = radius * 1.02;
   const satGeometry = new THREE.IcosahedronGeometry(satRadius, 3);
 
+  // --- Modificação 1: Opacidade baseada no tamanho da tela ---
+  const isSmallScreen = window.innerWidth < 768;
   const lineMaterial = new THREE.MeshBasicMaterial({
     color: 0xa855f7,
     wireframe: true,
     transparent: true,
-    opacity: 0.2,
+    opacity: isSmallScreen ? 0.6 : 0.2, // Mais evidente em telas menores
     depthWrite: false,
   });
   networkGroup.add(new THREE.Mesh(satGeometry, lineMaterial));
@@ -366,6 +368,9 @@ function initDigitalGlobe() {
     renderer.setSize(width, height);
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
+
+    // --- Modificação 2: Atualiza a opacidade ao redimensionar a janela ---
+    lineMaterial.opacity = window.innerWidth < 768 ? 0.6 : 0.2;
   });
 }
 
