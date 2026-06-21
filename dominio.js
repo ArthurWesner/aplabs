@@ -43,8 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then((response) => {
           resultMessage.classList.add("show");
           
-          // Dispara a rotação do planeta junto com a resposta da API
-          spinPlanet();
+          // spinPlanet() removido para evitar animações indesejadas no iPhone
 
           if (response.status === 404) {
             setStatus("success");
@@ -58,13 +57,13 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         })
         .catch((error) => {
-          spinPlanet();
+          // spinPlanet() removido
           setStatus("error");
           resultMessage.classList.add("show");
           resultMessage.innerHTML = `ERRO DE CONEXÃO`;
         });
     } else {
-      spinPlanet();
+      // spinPlanet() removido
       setStatus("error");
       resultMessage.classList.add("show");
       resultMessage.innerHTML = `CONSULTAMOS APENAS .BR`;
