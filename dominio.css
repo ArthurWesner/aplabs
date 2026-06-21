@@ -434,7 +434,7 @@ body {
 }
 
 #domain-input::placeholder {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgb(255 255 255 / 38%);
   font-size: 0.9rem;
   letter-spacing: 8px;
   text-shadow: none;
@@ -501,20 +501,33 @@ body {
 }
 
 
+/* =========================================
+   ANIMAÇÕES EXCLUSIVAS PARA CELULAR (CORRIGIDAS)
+   ========================================= */
 @keyframes spin-f-mobile {
-  0% { transform: translateX(-50%) rotate(0deg) scale(1); }
-  52% { transform: translateX(-50%) rotate(250deg) scale(1.01); }
-  100% { transform: translateX(-50%) rotate(360deg) scale(1); }
+  0% { transform: rotate(0deg) scale(1); }
+  52% { transform: rotate(250deg) scale(1.01); }
+  100% { transform: rotate(360deg) scale(1); }
 }
 
 @keyframes spin-b-mobile {
-  0% { transform: translateX(-50%) rotate(0deg) scale(1); }
-  52% { transform: translateX(-50%) rotate(-250deg) scale(1.01); }
-  100% { transform: translateX(-50%) rotate(-360deg) scale(1); }
+  0% { transform: rotate(0deg) scale(1); }
+  52% { transform: rotate(-250deg) scale(1.01); }
+  100% { transform: rotate(-360deg) scale(1); }
 }
 
-
+/* =========================================
+   RESPONSIVIDADE (CELULARES / IPHONE)
+   ========================================= */
 @media (max-width: 600px) {
+  
+  .planet.spin {
+    animation: spin-f-mobile 0.9s cubic-bezier(0.2, 0.85, 0.18, 1);
+  }
+  
+  .status-error .planet.spin {
+    animation-name: spin-b-mobile;
+  }
   
   .navbar {
     padding: 1.5rem 6%;
@@ -545,11 +558,13 @@ body {
     display: none;
   }
 
+  /* AQUI O PLANETA TRAVA NO CENTRO SEM USAR TRANSFORM */
   .planet {
     top: 140px !important;
-    left: 50% !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 auto !important;
     width: 170px !important;
-    transform: translateX(-50%) !important;
   }
 
   body {
