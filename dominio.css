@@ -62,54 +62,33 @@ html, body {
   --hgx: 50%;
 }
 
+/* ESTADOS DAS CORES (Apenas transições de cor, sem alterar a posição da luz) */
+
+body.status-default {
+  --glow: var(--brand);
+  --light: var(--brand2);
+  --sky1: #0b0313;
+  --sky2: #08020f;
+  --sky3: #010106;
+  --planet-bg: #270738;
+}
+
 body.status-success {
-  /* SUCESSO: Luz vindo forte da DIREITA */
   --glow: var(--green);
   --light: var(--green2);
   --sky1: #031f15;
   --sky2: #01100b;
   --sky3: #010604;
   --planet-bg: #042e1d;
-
-  --plx: 85%;
-  --ply: 25%;
-  --pgx: 85%;
-  --pgy: 25%;
-  --rim: 230deg;
-
-  /* O reflexo claro vai para a direita, a sombra profunda vai para a esquerda */
-  --hx: -55px;
-  --hy: 10px;
-  --sx: 90px;
-  --sy: -30px;
-
-  --hlx: 75%;
-  --hgx: 75%;
 }
 
 body.status-error {
-  /* ERRO: Luz vindo forte da ESQUERDA */
   --glow: var(--red);
   --light: var(--red2);
   --sky1: #26020c;
   --sky2: #120106;
   --sky3: #070103;
   --planet-bg: #380410;
-
-  --plx: 15%;
-  --ply: 25%;
-  --pgx: 15%;
-  --pgy: 25%;
-  --rim: 130deg;
-
-  /* O reflexo claro vai para a esquerda, a sombra profunda vai para a direita */
-  --hx: 55px;
-  --hy: 10px;
-  --sx: -90px;
-  --sy: -30px;
-
-  --hlx: 25%;
-  --hgx: 25%;
 }
 
 * {
@@ -501,24 +480,6 @@ body {
 }
 
 
-/* =========================================
-   ANIMAÇÕES EXCLUSIVAS PARA CELULAR (CORRIGIDAS)
-   ========================================= */
-@keyframes spin-f-mobile {
-  0% { transform: rotate(0deg) scale(1); }
-  52% { transform: rotate(250deg) scale(1.01); }
-  100% { transform: rotate(360deg) scale(1); }
-}
-
-@keyframes spin-b-mobile {
-  0% { transform: rotate(0deg) scale(1); }
-  52% { transform: rotate(-250deg) scale(1.01); }
-  100% { transform: rotate(-360deg) scale(1); }
-}
-
-/* =========================================
-   RESPONSIVIDADE (CELULARES / IPHONE)
-   ========================================= */
 @media (max-width: 600px) {
   
   .planet.spin {
