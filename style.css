@@ -109,6 +109,11 @@ body {
   letter-spacing: -1px;
 }
 
+.logo img {
+  height: 3vh; 
+  width: auto; 
+}
+
 .logo span {
   color: var(--purple-glow);
 }
