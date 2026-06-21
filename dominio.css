@@ -128,7 +128,7 @@ body {
 }
 
 .logo img {
-  max-height: 45px;
+  height: 3vh;
   width: auto;
   object-fit: contain;
   pointer-events: none;
